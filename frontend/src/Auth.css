@@ -1,0 +1,93 @@
+.auth-container {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #2b4f3b;
+  background-image: 
+    linear-gradient(rgba(43, 79, 59, 0.9), rgba(43, 79, 59, 0.9)),
+    url('https://www.transparenttextures.com/patterns/chalkboard.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-box {
+  background-color: #b58054;
+  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 10px rgba(0,0,0,0.2);
+  border: 2px solid #8e5c38;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.auth-box h2 {
+  font-family: 'Caveat', cursive;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.auth-btn {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.5rem 2rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #3b82f6;
+  color: white;
+  box-shadow: 0 4px 0 #2563eb;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.auth-btn:hover {
+  background-color: #2563eb;
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #1d4ed8;
+}
+
+.auth-btn:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+.auth-link {
+  margin-top: 1.5rem;
+  font-family: 'Nunito', sans-serif;
+  color: #eee;
+}
+
+.auth-link a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+}
