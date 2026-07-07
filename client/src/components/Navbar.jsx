@@ -13,14 +13,12 @@ export default function Navbar() {
 
   return (
     <nav className="glass-nav">
-      <Link to="/" className="nav-brand">TimeCapsule</Link>
+      <Link to="/" className="nav-brand">CollabBoard</Link>
       <div className="nav-links">
         {token ? (
           <>
             <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
               <span className="text-muted">Welcome, {username}</span>
-              <Link to="/whiteboard" className="btn btn-secondary">Whiteboard</Link>
-              <Link to="/create" className="btn btn-primary">Create Capsule</Link>
               <button onClick={handleLogout} className="btn btn-secondary">Logout</button>
             </div>
           </>
