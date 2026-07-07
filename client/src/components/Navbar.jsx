@@ -17,9 +17,12 @@ export default function Navbar() {
       <div className="nav-links">
         {token ? (
           <>
-            <span className="text-muted">Welcome, {username}</span>
-            <Link to="/create" className="btn btn-primary">Create Capsule</Link>
-            <button onClick={handleLogout} className="btn btn-secondary">Logout</button>
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+              <span className="text-muted">Welcome, {username}</span>
+              <Link to="/whiteboard" className="btn btn-secondary">Whiteboard</Link>
+              <Link to="/create" className="btn btn-primary">Create Capsule</Link>
+              <button onClick={handleLogout} className="btn btn-secondary">Logout</button>
+            </div>
           </>
         ) : (
           <>

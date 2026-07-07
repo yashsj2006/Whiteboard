@@ -6,6 +6,7 @@ import Login from './pages/Login.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import CreateCapsule from './pages/CreateCapsule.jsx';
 import ViewCapsule from './pages/ViewCapsule.jsx';
+import Whiteboard from './pages/Whiteboard.jsx';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="register" element={<Login isRegister={true} />} />
           <Route path="create" element={<CreateCapsule />} />
           <Route path="capsule/:id" element={<ViewCapsule />} />
+          <Route path="whiteboard" element={<Whiteboard />} />
         </Route>
       </Routes>
     </BrowserRouter>
