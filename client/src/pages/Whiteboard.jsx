@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { io } from 'socket.io-client';
+import { useNavigate } from 'react-router-dom';
 
 const socket = io('http://localhost:5000');
 
 export default function Whiteboard() {
+  const navigate = useNavigate();
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
@@ -11,6 +13,12 @@ export default function Whiteboard() {
   const [lineWidth, setLineWidth] = useState(5);
 
   useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/register');
+      return;
+    }
+
     const canvas = canvasRef.current;
     
     // Set exact dimensions to prevent stretching
@@ -163,8 +171,10 @@ export default function Whiteboard() {
           onTouchMove={draw}
           style={{
             cursor: 'crosshair',
-            background: 'rgba(15, 23, 42, 0.4)',
-            touchAction: 'none'
+            background: '#ffffff',
+            touchAction: 'none',
+            borderRadius: '8px',
+            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
           }}
         />
       </div>
