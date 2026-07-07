@@ -1,14 +1,14 @@
 :root {
-  --background: #0f172a;
-  --foreground: #f8fafc;
-  --primary: #8b5cf6;
-  --primary-hover: #7c3aed;
-  --secondary: #1e293b;
-  --accent: #38bdf8;
+  --background: #1e392a;
+  --foreground: #f4f4f4;
+  --primary: #d15959;
+  --primary-hover: #b54949;
+  --secondary: #2a4231;
+  --accent: #f9f3c3;
   --error: #ef4444;
   --success: #10b981;
-  --glass: rgba(30, 41, 59, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.15);
 }
 
 * {
@@ -23,8 +23,8 @@ body {
   color: var(--foreground);
   min-height: 100vh;
   background-image: 
-    radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.15) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(209, 89, 89, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(249, 243, 195, 0.15) 0px, transparent 50%);
   background-attachment: fixed;
 }
 
