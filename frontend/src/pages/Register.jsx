@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import '../Auth.css';
 
-const API_URL = window.location.port === '5000' ? '' : 'http://localhost:5000';
+const API_URL = import.meta.env.DEV ? 'http://localhost:5000' : '';
 
 function Register() {
   const [username, setUsername] = useState('');

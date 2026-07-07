@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
 import { useNavigate } from 'react-router-dom';
 
-const SOCKET_URL = window.location.port === '5000' ? '' : 'http://localhost:5000';
+const SOCKET_URL = import.meta.env.DEV ? 'http://localhost:5000' : '';
 const socket = io(SOCKET_URL);
 
 function Whiteboard() {

@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import '../Auth.css';
 
 // Base URL for API requests
-const API_URL = window.location.port === '5000' ? '' : 'http://localhost:5000';
+const API_URL = import.meta.env.DEV ? 'http://localhost:5000' : '';
 
 function Login() {
   const [username, setUsername] = useState('');
