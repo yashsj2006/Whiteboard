@@ -1,68 +1,78 @@
-# Digital Time Capsule ⏳
+# Collaborative Whiteboard 🎨
 
-Digital Time Capsule is a modern, full-stack web application designed to help you securely store digital memories—messages, notes, and photos—and lock them away until a specific date in the future. Once the chosen date arrives, the capsule unlocks, allowing you to relive the memory exactly as it was preserved.
+A real-time collaborative whiteboard web application built with the MERN stack (MongoDB, Express, React, Node.js) and Socket.IO.
 
-## 🌟 Features
+## Features ✨
 
-* **Time-Locked Memories**: Create capsules with a specific unlock date and time. The content remains strictly inaccessible until the countdown reaches zero.
-* **Photo Uploads**: Attach photos and media to your capsules to capture the exact feeling of the moment.
-* **Secure Authentication**: Robust user registration and login flows protected by JWT (JSON Web Tokens) and bcrypt password hashing.
-* **Premium Glassmorphism UI**: A beautifully crafted, responsive interface utilizing modern CSS glassmorphism effects for a highly engaging user experience.
-* **Strict Privacy Controls**: Capsules are private by default, ensuring your personal memories remain yours until you decide to share them.
+*   **Real-time Collaboration:** Draw on the board and see your friends' drawings appear instantly in real-time.
+*   **School Vibes Aesthetic:** Enjoy a fun, immersive UI featuring a green chalkboard background and a wooden desk that holds your drawing canvas.
+*   **User Authentication:** Complete Register and Login workflow to keep your drawing sessions secure.
+*   **Collaborative Cursors:** See exactly who is drawing with live-tracking red cursors and floating name tags for every connected user.
+*   **Customizable Tools:** Pick your favorite color from the color picker and adjust the brush size to your liking.
 
-## 🏗️ Architecture & Tech Stack
+## Tech Stack 🛠️
 
-This project was built with a decoupled client-server architecture to ensure high scalability, reliability, and maintainability.
+*   **Frontend:** React (Vite), React Router, HTML5 Canvas, CSS3
+*   **Backend:** Node.js, Express.js, Socket.IO
+*   **Database:** MongoDB & Mongoose
 
-* **Frontend**: React.js (via Vite)
-  * Implements a lightning-fast Single Page Application (SPA).
-  * Uses `react-router-dom` for seamless client-side routing.
-  * Custom CSS design system (no heavy CSS frameworks) for precise visual control.
-* **Backend**: Node.js & Express.js
-  * RESTful API architecture handling business logic and file uploads via `multer`.
-  * **Database**: MySQL.
-  * **ORM**: Prisma (v5) for type-safe database querying and schema migrations.
+## Installation and Setup 🚀
 
-## 🚀 Getting Started
-
-To run this project locally, you will need to start both the frontend and backend servers.
+To run this project locally, follow these steps:
 
 ### Prerequisites
-* Node.js (v18+)
-* MySQL Server running locally
 
-### 1. Database Setup
-1. Open `server/.env` and configure your `DATABASE_URL` with your MySQL credentials:
-   ```env
-   DATABASE_URL="mysql://username:password@localhost:3306/dtc"
-   JWT_SECRET="your_secure_secret_key"
-   ```
-2. Run the Prisma migration to generate the tables:
-   ```bash
-   cd server
-   npx prisma db push
-   ```
+*   [Node.js](https://nodejs.org/) installed on your machine.
+*   A running instance of MongoDB (Local or MongoDB Atlas).
 
-### 2. Start the Backend Server
+### 1. Clone the repository
+
 ```bash
-cd server
-npm install
-node server.js
+git clone https://github.com/yashsj2006/Whiteboard.git
+cd Whiteboard
 ```
-*(The API will run on http://localhost:5000)*
 
-### 3. Start the Frontend Client
-Open a new terminal window:
-```bash
-cd client
-npm install
-npm run dev
-```
-*(The React app will run on http://localhost:5173)*
+### 2. Backend Setup
 
-## 💡 System Design Considerations
-* **Scalability**: The separation of the React client and Express API allows both to be scaled horizontally independent of one another. The file upload system is currently local for feasibility but is designed to be easily swapped with an AWS S3 or Cloudinary storage engine without modifying the frontend.
-* **Reliability**: Prisma provides robust, type-safe database interactions, minimizing runtime errors and SQL injection vulnerabilities.
+1.  Navigate to the `backend` directory:
+    ```bash
+    cd backend
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Set up environment variables:
+    Create a `.env` file in the `backend` folder and add your MongoDB URI:
+    ```env
+    MONGO_URI=mongodb://127.0.0.1:27017/whiteboard
+    PORT=5000
+    ```
+4.  Start the backend server:
+    ```bash
+    npm start
+    ```
 
----
-*Built with ❤️ for preserving the moments that matter.*
+### 3. Frontend Setup
+
+The frontend is already built and statically served by the backend from the `backend/public` directory. However, if you want to modify the frontend code or run the dev server:
+
+1.  Open a new terminal and navigate to the `frontend` directory:
+    ```bash
+    cd frontend
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Start the Vite development server:
+    ```bash
+    npm run dev
+    ```
+
+## Usage 🧑‍🏫
+
+1.  Open your browser and navigate to `http://localhost:5000` (or `http://localhost:5173` if using the Vite dev server).
+2.  Register a new account.
+3.  Log in with your new credentials.
+4.  Share the URL with a friend, ask them to create an account, and start drawing together!
